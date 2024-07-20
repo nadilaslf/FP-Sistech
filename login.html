@@ -3,36 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscription Offer</title>
-    <link rel="stylesheet" href="new.css">
+    <title>Login Form</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
-            <h2>PENAWARAN TERBAIK!</h2>
-        </div>
-        <div class="card-body">
-            <h3>Paket 3 Bulan</h3>
-            <p class="price">Rp 375.000</p>
-            <ul>
-                <li>
-                    <i class="checkmark">✔</i>
-                    <span>Video<br><small>900+ video materi</small></span>
-                </li>
-                <li>
-                    <i class="checkmark">✔</i>
-                    <span>Kuis<br><small>Kuis untuk mengasah kemampuanmu</small></span>
-                </li>
-                <li>
-                    <i class="checkmark">✔</i>
-                    <span>Rangkuman<br><small>Ringkasan beserta ilustrasi lengkap</small></span>
-                </li>
-                <li>
-                    <i class="checkmark">✔</i>
-                    <span>Komunitas<br><small>Tanya pertanyaanmu sepuasnya</small></span>
-                </li>
-            </ul>
-        </div>
+    
+    <div class="logo">
+        <div class="gradient">UpGrad</div>
+    </div>
+
+    <div class="form-section">
+        <!-- <i class="uil uil-times form_close"></i> -->
+        <!-- login form -->
+         <div class="form login_form">
+            <form action="#">
+                <h2>Log In</h2>
+                <button class="button-hero"><img src="assets/Google.png" alt="Google">
+                Continue with Google</button>
+            
+                  
+                <h3>OR</h3>
+                <div class="input_box">
+                    <input type="email" placeholder="Email" class="input-field" required>
+                </div>
+                <div class="input_box">
+                    <div class="password-container">
+                        <input type="password" placeholder="Password" class="input-field" required >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path d="M0.833496 8.00001C0.833496 8.00001 4.16683 1.33334 10.0002 1.33334C15.8335 1.33334 19.1668 8.00001 19.1668 8.00001C19.1668 8.00001 15.8335 14.6667 10.0002 14.6667C4.16683 14.6667 0.833496 8.00001 0.833496 8.00001Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.0002 10.5C11.3809 10.5 12.5002 9.38072 12.5002 8.00001C12.5002 6.6193 11.3809 5.50001 10.0002 5.50001C8.61945 5.50001 7.50016 6.6193 7.50016 8.00001C7.50016 9.38072 8.61945 10.5 10.0002 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- <div class="option_field">
+                    <span class="checkbox">
+                        <div class="remember-me">
+                            <input type="checkbox" id="check">
+                            <label for="check">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    </span>
+                </div> -->
+
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <!-- <button class="button"><a href="login-after.html"></a>Login</button> -->
+                <a href="login-after.html" class="button" style="color: black; font-weight: 600; font-size: 16px;">Login</a>
+
+                <div class="login_signup">
+                    Don't have an account? <a href="#" id="signup">Register here</a>
+                </div>
+            </form>
+         </div>
     </div>
     <script src="js.js"></script>
 </body>

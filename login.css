@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: black;
+}
+
+.logo{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    padding: 40px;
+    /* geser ke kanan */
+    margin-right: 20px;
+}
+
+.gradient{
+    color: #FFFFFF;
+    font-weight: 800;
+    /* tebal */
+    font-size: 40px;
+}
+
+.form-section{
+    position: fixed;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    padding: 25px;
+    border-radius: 12px;
+    
+}
+
+form h2{
+    color: #FFFFFF;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+}
+
+form h3{
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+}
+.button-hero{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    margin-top: 2rem;
+    gap: 1rem;
+    background-color: #6348b3;
+    margin-top: 30px;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 25px;
+    color: #FFFFFF;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+.input_box{
+    position: relative;
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    /* border-radius: 60%; */
+}
+
+.input-field{
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #7e8baf;
+    color: white;
+}
+
+.password-container{
+    position: relative;
+}
+
+.password-container svg{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(200%);
+    cursor: pointer;
+    justify-content: space-between;
+    color: black;
+}
+
+
+ /* .input_box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    /* color: blueviolet; 
+    transition: all 0.2s ease;
+    border-radius: 10px;
+    background-color: #7e8baf;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 15px;
+    /* border-bottom: 1.5px solid orange; 
+}  */
+
+.input_box input:focus{
+    border-color: #8c6fe3;
+}
+
+.input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: palevioletred;
+}
+
+.input_box svg
+{
+    right: 0;
+    /* color: blue; */
+}
+
+
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password
+{
+    color: #8c6fe3;
+}
+
+.input_box i.pw_hide{
+    right: 0;
+    font-size: 18px;
+}
+
+.option_field{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-section a{
+    color: #FFFFFF;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.form-section a:hover{
+    text-decoration: underline;
+}
+
+.checkbox{
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+    font-size: 12px;
+    justify-content: space-between;
+}
+
+
+
+.checkbox input{
+    accent-color: #8c6fe3;
+}
+
+.checkbox label{
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.remember-forgot label{
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+.remember-forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.button{
+    /* background: #FFFFFF;
+    margin-top: 5px;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 25px;
+    color: black;
+    font-weight: 600;
+    border: none; */
+
+    display: inline-block;
+    padding: 12px 0;
+    font-size: 16px;
+    color: black;
+    /* color: red; */
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    width: 100%;
+    
+}
+
+/* a{
+    color: black;
+} */
+
+.login_signup{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+    color: #FFFFFF;
+    /* font-weight: 600; */
+}
+
+.login_signup a{
+    color: #8c6fe3;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
