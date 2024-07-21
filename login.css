@@ -244,3 +244,17 @@ form h3{
     font-size: 15px;
     font-weight: 600;
 }
+
+.register-tnc{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+    color: #FFFFFF;
+    /* font-weight: 600; */
+}
+
+.register-tnc a{
+    color: #8c6fe3;
+    text-decoration: none;
+    font-size: 12px;
+}

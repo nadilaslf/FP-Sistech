@@ -347,3 +347,55 @@ document.addEventListener('DOMContentLoaded', () => {
     getListKuis();
     getListUlasan();
 });
+
+// page kelas
+// Fungsi untuk menampilkan halaman berdasarkan parameter
+function showPage(page) {
+    // Hasilkan ID halaman yang sesuai
+    const pageId = `page${page}`;
+    
+    // Ambil semua elemen konten kelas dan tombol pagination
+    const pages = document.querySelectorAll('.kelas-container');
+    const buttons = document.querySelectorAll('.pagination-btn');
+
+    // Sembunyikan semua halaman dan hapus kelas aktif dari semua tombol
+    pages.forEach(p => p.style.display = 'none');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // Tampilkan halaman yang sesuai dan tambahkan kelas aktif pada tombol pagination
+    document.getElementById(pageId).style.display = 'flex';
+    buttons[page - 1].classList.add('active');
+}
+
+// Fungsi untuk menampilkan konten berdasarkan kategori
+function showContent(content) {
+    const allPage = document.getElementById('allPage');
+    const newPage = document.getElementById('newPage');
+    const upcomingPage = document.getElementById('upcomingPage');
+    
+    allPage.style.display = 'none';
+    newPage.style.display = 'none';
+    upcomingPage.style.display = 'none';
+
+    if (content === 'all') {
+        allPage.style.display = 'block';
+        document.getElementById('allLink').classList.add('active');
+        document.getElementById('newLink').classList.remove('active');
+        document.getElementById('upcomingLink').classList.remove('active');
+    } else if (content === 'new') {
+        newPage.style.display = 'block';
+        document.getElementById('allLink').classList.remove('active');
+        document.getElementById('newLink').classList.add('active');
+        document.getElementById('upcomingLink').classList.remove('active');
+    } else if (content === 'upcoming') {
+        upcomingPage.style.display = 'block';
+        document.getElementById('allLink').classList.remove('active');
+        document.getElementById('newLink').classList.remove('active');
+        document.getElementById('upcomingLink').classList.add('active');
+    }
+}
+
+// Pastikan halaman pertama aktif pada awalnya
+document.addEventListener('DOMContentLoaded', () => showPage(1));
+
+
