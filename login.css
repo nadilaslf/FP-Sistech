@@ -51,7 +51,6 @@ form h3{
 }
 .button-hero{
     display: flex;
-    /* grid-template-columns: 1fr 1fr; */
     margin-top: 2rem;
     gap: 1rem;
     background-color: #6348b3;
@@ -72,7 +71,6 @@ form h3{
     margin-top: 20px;
     width: 80%;
     height: 40px;
-    /* border-radius: 60%; */
 }
 
 .input-field{
@@ -100,23 +98,6 @@ form h3{
     color: black;
 }
 
-
- /* .input_box input{
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 0 30px;
-    /* color: blueviolet; 
-    transition: all 0.2s ease;
-    border-radius: 10px;
-    background-color: #7e8baf;
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 15px;
-    /* border-bottom: 1.5px solid orange; 
-}  */
-
 .input_box input:focus{
     border-color: #8c6fe3;
 }
@@ -132,7 +113,6 @@ form h3{
 .input_box svg
 {
     right: 0;
-    /* color: blue; */
 }
 
 
@@ -172,8 +152,6 @@ form h3{
     justify-content: space-between;
 }
 
-
-
 .checkbox input{
     accent-color: #8c6fe3;
 }
@@ -203,20 +181,10 @@ form h3{
 }
 
 .button{
-    /* background: #FFFFFF;
-    margin-top: 5px;
-    width: 100%;
-    padding: 12px 0;
-    border-radius: 25px;
-    color: black;
-    font-weight: 600;
-    border: none; */
-
     display: inline-block;
     padding: 12px 0;
     font-size: 16px;
     color: black;
-    /* color: red; */
     background-color: white;
     text-align: center;
     text-decoration: none;
@@ -226,16 +194,11 @@ form h3{
     
 }
 
-/* a{
-    color: black;
-} */
-
 .login_signup{
     font-size: 15px;
     text-align: center;
     margin-top: 15px;
     color: #FFFFFF;
-    /* font-weight: 600; */
 }
 
 .login_signup a{
@@ -250,7 +213,6 @@ form h3{
     text-align: center;
     margin-top: 15px;
     color: #FFFFFF;
-    /* font-weight: 600; */
 }
 
 .register-tnc a{

@@ -8,18 +8,8 @@ function scrollRight() {
     cardsWrapper.scrollBy({ left: 300, behavior: 'smooth' });
 }
 
-// const cardsWrapper = document.querySelector('.cards-wrapper');
-
-//         function scrollLeft() {
-//             cardsWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-//         }
-
-//         function scrollRight() {
-//             cardsWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-//         }
-
-        document.getElementById('prevBtn').addEventListener('click', scrollLeft);
-        document.getElementById('nextBtn').addEventListener('click', scrollRight);
+document.getElementById('prevBtn').addEventListener('click', scrollLeft);
+document.getElementById('nextBtn').addEventListener('click', scrollRight);
 
 const carouselInner = document.querySelector('.carousel-inner');
 
@@ -29,6 +19,28 @@ function scrollLeft() {
 
 function scrollRight() {
     carouselInner.scrollBy({ left: 300, behavior: 'smooth' });
+}
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+    } else {
+        dropdownMenu.style.display = 'block';
+    }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.profile-name')) {
+        const dropdowns = document.getElementsByClassName("dropdown");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.style.display === 'block') {
+                openDropdown.style.display = 'none';
+            }
+        }
+    }
 }
 
 let currentIndex = 0;
@@ -58,32 +70,6 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 function updateCarousel() {
     carousel.style.transform = `translateX(-${currentIndex * 300}px)`;
 }
-
-
-// let currentIndex = 0;
-
-// function updateCarousel() {
-//     const carouselInner = document.querySelectorAll('.carousel-inner');
-//     carouselInner.forEach(inner => {
-//         inner.style.transform = `translateX(-${currentIndex * 220}px)`;
-//     });
-// }
-
-// function prevSlide() {
-//     if (currentIndex > 0) {
-//         currentIndex--;
-//         updateCarousel();
-//     }
-// }
-
-// function nextSlide() {
-//     const totalItems = document.querySelectorAll('.carousel-item').length;
-//     if (currentIndex < totalItems - 1) {
-//         currentIndex++;
-//         updateCarousel();
-//     }
-// }
-
 
 const data = "https://private-c7b41-upgrad.apiary-mock.com/questions";
 const listBuku = document.querySelector('.carousel-inner-perpustakaan');
@@ -128,18 +114,16 @@ const getListFitur = () => {
         }).then(responseJson => {
             console.log(responseJson.fitur);
 
-            // if (!responseJson.fitur) {
-            //     console.error('fitur data not found in response');
-            //     return;
-            // }
-
             listFitur.innerHTML = "";
             let fitur = responseJson.fitur;
             fitur.forEach(Fitur => {
                 listFitur.innerHTML += `
                 
             <div class="card">
-                <h3>${Fitur.title}</h3>
+                <div class="header-card">
+                    <h3>${Fitur.title}</h3>
+                    <img src="${Fitur.arrow}" alt="Arrow">
+                </div>
                 <p>${Fitur.desc}</p>
                 <img src="${Fitur.img}" alt="Kelas">
             </div>
@@ -157,11 +141,6 @@ const getListKelas = () => {
             return response.json();
         }).then(responseJson => {
             console.log(responseJson.kelas);
-
-            // if (!responseJson.fitur) {
-            //     console.error('fitur data not found in response');
-            //     return;
-            // }
 
             listKelas.innerHTML = "";
             let kelas = responseJson.kelas;
@@ -190,11 +169,6 @@ const getListKuis = () => {
         }).then(responseJson => {
             console.log(responseJson.kuis);
 
-            // if (!responseJson.fitur) {
-            //     console.error('fitur data not found in response');
-            //     return;
-            // }
-
             listKuis.innerHTML = "";
             let kuis = responseJson.kuis;
             kuis.forEach(Kuis => {
@@ -214,82 +188,11 @@ const getListKuis = () => {
         })
 }
 
-// const getListKuis = () => {
-//     fetch(data)
-//         .then(response => {
-//             return response.json();
-//         }).then(responseJson => {
-//             console.log(responseJson.kuis);
-
-//             // if (!responseJson.fitur) {
-//             //     console.error('fitur data not found in response');
-//             //     return;
-//             // }
-
-//             // listKuis.innerHTML = "";
-//             let kuis = responseJson.kuis;
-//             kuis.forEach(Kuis => {
-//                 listKuis.innerHTML += `
-//                     <div class="carousel-inner cards-wrapper">
-//                         <div class="carousel-item-bacaan">
-//                             <img style="padding: 35px;" src="${Kuis.img}" alt="Kalkulus">
-//                             <div class="carousel-caption">
-//                                 <p class="bacaan-type">${Kuis.desc}</p>
-//                                 <p class="bacaan-type">${Kuis.matkul}</p>
-//                                 <p>${Kuis.title}</p>
-//                             </div>
-//                         </div>
-//                     </div>
-               
-//                 `
-//             });
-//         }).catch(error => {
-//             console.error(error);
-//         })
-// }
-
-// const getListUlasan = () => {
-//     fetch(data)
-//         .then(response => {
-//             return response.json();
-//         }).then(responseJson => {
-//             console.log(responseJson.ulasan);
-
-//             // if (!responseJson.fitur) {
-//             //     console.error('fitur data not found in response');
-//             //     return;
-//             // }
-
-//             // listKuis.innerHTML = "";
-//             let ulasan = responseJson.ulasan;
-//             ulasan.forEach(Ulasan => {
-//                 listUlasan.innerHTML += `
-//                     <div class="carousel-item-ulasan">
-                    
-//                              <p class="ulasan">${Ulasan.ulasan}</p>
-//                             <div class="carousel-caption-ulasan">
-//                                 <p class="bacaan-type">${Ulasan.univ} </p>
-//                                 <p>${Ulasan.nama}</p>
-//                             </div>
-//                         </div>
-               
-//                 `
-//             });
-//         }).catch(error => {
-//             console.error(error);
-//         })
-// }
-
 const getListUlasan = () => {
     fetch(data)
         .then(response => response.json())
         .then(responseJson => {
             console.log(responseJson.ulasan);
-
-            // if (!responseJson.fitur) {
-            //     console.error('fitur data not found in response');
-            //     return;
-            // }
 
             listUlasan.innerHTML = "";
             let ulasan = responseJson.ulasan;
@@ -315,30 +218,6 @@ const getListUlasan = () => {
             console.error(error);
         })
 }
-
-
-
-// const showListBuku = Buku => {
-//     listBuku.innerHTML = "";
-//     // let Buku = responseJson.data;
-//     Buku.forEach(item => {
-//         listBuku.innerHTML += `
-//         <div class="carousel-inner cards-wrapper">
-//             <div class="carousel-item-bacaan">
-//                 <img style="padding: 35px;" src="assets/bacaan-kalkulus.jpg" alt="Kalkulus">
-//                 <div class="carousel-caption">
-//                     <p class="bacaan-type">${item.desc}</p>
-//                     <p>${item.title}</p>
-//                 </div>
-//             </div>
-        
-    
-//         </div>
-//         `
-//     });
-// }
-
-// const showListBuku
 
 document.addEventListener('DOMContentLoaded', () => {
     getListBuku();
